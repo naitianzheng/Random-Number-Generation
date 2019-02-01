@@ -1,0 +1,12 @@
+y = power(x,2);
+hist(y,20);
+hold on;
+[counts,centres] = hist(y,20);
+width = centres(2)-centres(1);
+l=0.1:0.01:16;
+sqrt1= sqrt(2*pi*l);
+exp1=exp(-l/2);
+yl=exp1./sqrt1;
+%yl=exp(-l./2)/sqrt(2*pi*l);
+yl=yl.*(10000*width);
+plot(l,yl,'-k');
